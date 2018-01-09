@@ -1,0 +1,512 @@
+<div id="e-commerce-product" class="page-layout simple tabbed" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div class="white-fg" layout="row" layout-align="start center" flex>
+            <md-button class="goto-products-button md-icon-button" aria-label="Go to products"
+                       ng-click="vm.gotoProducts()"
+                       translate translate-attr-aria-label="EC.GO_TO_PRODUCTS">
+                <md-icon md-font-icon="icon-arrow-left"></md-icon>
+            </md-button>
+
+            <div layout="row" layout-align="start center">
+
+                <div layout="column" layout-align="start start">
+                    <div class="h2">
+                        {{vm.product.nombre}} {{vm.product.apellidoPaterno}} {{vm.product.apellidoMaterno}}
+
+                    </div>
+                    <div class="subtitle secondary-text">
+                        <span>Detalles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <md-button class="md-raised md-background" ng-click="vm.saveProduct()"
+                       ng-disabled="!vm.isFormValid('productForm1')">
+                <span>Guardar</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs md-dynamic-height>
+
+            <md-tab>
+                <md-tab-label>
+
+                    <span >Información Personal</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm1" name="productForm1">
+
+                          <md-input-container class="md-block">
+                              <label>Título</label>
+                              <input type="text" ng-model="vm.product.titulo" >
+                          </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Nombre</label>
+                                <input type="text" ng-model="vm.product.nombre" required>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Apellido Paterno</label>
+                                <input type="text" ng-model="vm.product.apellidoPaterno" >
+                            </md-input-container>
+
+
+                            <md-input-container class="md-block">
+                                <label>Apellido Materno</label>
+                                <input type="text" ng-model="vm.product.apellidoMaterno" >
+                            </md-input-container>
+
+                            <md-input-container md-no-float class="md-block">
+                              <h4>Fecha de Nacimiento</h4>
+                                <md-datepicker ng-model="vm.product.fechaNacimiento" md-current-view="year" md-placeholder="Ingresar Fecha"></md-datepicker>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                              <label>Género</label>
+                              <md-select ng-model="vm.product.genero">
+                                <md-option value="Masculino">Masculino</md-option>
+                                <md-option value="Femenino">Femenino</md-option>
+                              </md-select>
+                            </md-input-container>
+
+                          </br>
+
+                            <md-input-container class="md-block">
+                              <label>Grado Máximo de Estudios</label>
+                              <md-select ng-model="vm.product.gradoDeEstudios">
+                                <md-option value="Primaria">Primaria</md-option>
+                                <md-option value="Secundaria">Secundaria</md-option>
+                                <md-option value="Bachillerato">Bachillerato</md-option>
+                                <md-option value="Licenciatura">Licenciatura</md-option>
+                                <md-option value="Posgrado">Posgrado</md-option>
+                              </md-select>
+                            </md-input-container>
+
+                          </br>
+
+                            <md-input-container class="md-block">
+                              <label>Estado Civil</label>
+                              <md-select ng-model="vm.product.estadoCivil">
+                                <md-option value="Soltero">Soltero</md-option>
+                                <md-option value="Casado">Casado</md-option>
+                              </md-select>
+                            </md-input-container>
+
+                          </br>
+
+                            <md-input-container class="md-block">
+                                <label>Nombre Completo de Cónyuge (Si aplica)</label>
+                                <input type="text" ng-model="vm.product.nombreConyuge" >
+                            </md-input-container>
+
+                            <md-input-container md-no-float class="md-block">
+                              <h4>Fecha de Nacimiento del Cónyuge (Si aplica)</h4>
+                                <md-datepicker ng-model="vm.product.fechaNacimientoConyuge" md-current-view="year" md-placeholder="Ingresar Fecha"></md-datepicker>
+                            </md-input-container>
+
+
+
+
+
+
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span >Datos de Institución</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                  <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                      <form id="productForm" name="productForm">
+                          <md-input-container class="md-block">
+                              <label>Nombre de la Institución</label>
+                              <input type="text" ng-model="vm.product.nombreDeInstitucion">
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Puesto</label>
+                              <input type="text" ng-model="vm.product.puesto">
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Tamaño de la Institución</label>
+                            <md-select ng-model="vm.product.tamanioDeInstitucion">
+                              <md-option value="Micro">Micro</md-option>
+                              <md-option value="Pequenia">Pequeña</md-option>
+                              <md-option value="Mediana">Mediana</md-option>
+                              <md-option value="Grande">Grande</md-option>
+                            </md-select>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <md-switch ng-model="vm.product.donatariaAutorizada" aria-label="Donataria Autorizada" ng-true-value="'Si'" ng-false-value="'No'" >
+                              Donataria Autorizada: {{ vm.product.donatariaAutorizada }}
+                            </md-switch>
+                          </md-input-container>
+
+
+                      </form>
+                  </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span >Contacto</span>
+                </md-tab-label>
+
+                <md-tab-body>
+
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm" name="productForm">
+
+                          <h3 class="primary-text" >Dirección</h3>
+
+                          <md-input-container class="md-block">
+                              <label>Colonia</label>
+                              <input type="text" ng-model="vm.product.colonia">
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Calle y Número</label>
+                              <input type="text" ng-model="vm.product.calle">
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Ciudad</label>
+                              <input type="text" ng-model="vm.product.ciudad">
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Municipio o Delegación</label>
+                              <input type="text" ng-model="vm.product.municipio">
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Estado</label>
+                            <md-select ng-model="vm.product.estado">
+                              <md-option value="Ciudad de México">Ciudad de México</md-option>
+                              <md-option value="Aguascalientes">Aguascalientes</md-option>
+                              <md-option value="Baja California">Baja California</md-option>
+                              <md-option value="Baja California Sur">Baja California Sur</md-option>
+                              <md-option value="Campeche">Campeche</md-option>
+                              <md-option value="Chiapas">Chiapas</md-option>
+                              <md-option value="Chihuahua">Chihuahua</md-option>
+                              <md-option value="Coahuila">Coahuila</md-option>
+                              <md-option value="Colima">Colima</md-option>
+                              <md-option value="Durango">Durango</md-option>
+                              <md-option value="Estado de México">Estado de México</md-option>
+                              <md-option value="Guanajuato">Guanajuato</md-option>
+                              <md-option value="Guerrero">Guerrero</md-option>
+                              <md-option value="Hidalgo">Hidalgo</md-option>
+                              <md-option value="Jalisco">Jalisco</md-option>
+                              <md-option value="Michoacán">Michoacán</md-option>
+                              <md-option value="Morelos">Morelos</md-option>
+                              <md-option value="Nayarit">Nayarit</md-option>
+                              <md-option value="Nuevo León">Nuevo León</md-option>
+                              <md-option value="Oaxaca">Oaxaca</md-option>
+                              <md-option value="Puebla">Puebla</md-option>
+                              <md-option value="Querétaro">Querétaro</md-option>
+                              <md-option value="Quintana Roo">Quinatana Roo</md-option>
+                              <md-option value="San Luis Potosí">San Luis Potosí</md-option>
+                              <md-option value="Sinaloa">Sinaloa</md-option>
+                              <md-option value="Sonora">Sonora</md-option>
+                              <md-option value="Tabasco">Tabasco</md-option>
+                              <md-option value="Tamaulipas">Tamaulipas</md-option>
+                              <md-option value="Tlaxcala">Tlaxcala</md-option>
+                              <md-option value="Veracruz">Veracruz</md-option>
+                              <md-option value="Yucatán">Yucatán</md-option>
+                              <md-option value="Zacatecas">Zacatecas</md-option>
+
+                            </md-select>
+                          </md-input-container>
+                          </br>
+                          <md-input-container class="md-block">
+                              <label>Código Postal</label>
+                              <textarea ng-model="vm.product.codigoPostal" md-maxlength="5" rows="1" md-select-on-focus></textarea>
+                          </md-input-container>
+                        </form>
+                    </div>
+
+
+                  </br>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm" name="productForm">
+                          <h3 class="primary-text" >Datos de Asistente Personal</h3>
+                            <md-input-container class="md-block">
+                                <label>Nombre Completo</label>
+                                <input type="text" ng-model="vm.product.nombreAsistente">
+                            </md-input-container>
+
+                            <md-input-container md-no-float class="md-block">
+                                <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_phone_24px.svg"></md-icon>
+                                <input ng-model="vm.product.telefonoAsistente" type="text" placeholder="Teléfono de Asistente">
+                            </md-input-container>
+
+                            <md-input-container md-no-float class="md-block">
+                              <h4>Fecha de Nacimiento</h4>
+                                <md-datepicker ng-model="vm.product.fechaNacimientoAsistente" md-current-view="year" md-placeholder="Ingresar Fecha"></md-datepicker>
+                            </md-input-container>
+
+                        </form>
+                    </div>
+
+                  </br>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm" name="productForm">
+                          <h3 class="primary-text" >Vías de Contacto</h3>
+
+                          <md-input-container class="md-block">
+                              <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_email_24px.svg" class="email"></md-icon>
+                              <input ng-model="vm.product.email" type="email" placeholder="Email" ng-required="false">
+                          </md-input-container>
+
+                          <md-input-container md-no-float class="md-block">
+                              <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_phone_24px.svg"></md-icon>
+                              <input ng-model="vm.product.telefonoCasa" type="text" placeholder="Teléfono de Casa">
+                          </md-input-container>
+
+                          <md-input-container md-no-float class="md-block">
+                              <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_phone_24px.svg"></md-icon>
+                              <input ng-model="vm.product.telefonoOficina" type="text" placeholder="Teléfono de Oficina">
+                          </md-input-container>
+
+                          <md-input-container md-no-float class="md-block">
+                              <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_phone_24px.svg"></md-icon>
+                              <input ng-model="vm.product.telefonoMovil" type="text" placeholder="Teléfono Móvil">
+                          </md-input-container>
+                        </form>
+                    </div>
+
+                  </br>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm" name="productForm">
+                          <h3 class="primary-text"> Redes Sociales</h3>
+                            <md-input-container class="md-block">
+                                <label>Página Web</label>
+                                <input type="text" ng-model="vm.product.web">
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Facebook</label>
+                                <input type="text" ng-model="vm.product.facebook">
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Twitter</label>
+                                <input type="text" ng-model="vm.product.twitter">
+                            </md-input-container>
+
+                        </form>
+                    </div>
+
+                  </br>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form id="productForm" name="productForm">
+                          <h3 class="primary-text"> Características de Contacto</h3>
+                          <text-angular ta-toolbar="vm.taToolbar" ng-model="vm.product.caracteristicasContacto"
+                                        class="pb-32"></text-angular>
+
+                          <md-input-container class="md-block">
+                              <label>Área de CCB que Tiene Contacto</label>
+                              <md-select ng-model="vm.product.areaDeContacto" >
+                                <md-option value="Comunicación">Comunicación</md-option>
+                                <md-option value="Administración">Adminsitración</md-option>
+                                <md-option value="Dirección">Dirección</md-option>
+                                <md-option value="Asistencia y Emergencias">Asistencia y Emergencias</md-option>
+                                <md-option value="Promoción Humana">Promoción Humana</md-option>
+                                <md-option value="Desarrollo Social">Desarrollo Social</md-option>
+                                <md-option value="Consejo Consultivo">Consejo Consultivo</md-option>
+                                <md-option value="Patronato">Patronato</md-option>
+                              </md-select>
+                            </md-input-container>
+
+                        </form>
+                    </div>
+
+
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span >Datos Fiscales</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <form>
+
+                          <md-input-container class="md-block">
+                              <label>RFC</label>
+                              <input type="text" ng-model="vm.product.rfc" >
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Nombre (RFC)</label>
+                              <input type="text" ng-model="vm.product.rfcNombre" >
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Fecha de Nacimiento (RFC)</label>
+                              <input type="text" ng-model="vm.product.rfcNacimiento" >
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                              <label>Homoclave (RFC)</label>
+                              <input type="text" ng-model="vm.product.rfcHomoclave" >
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Dirección Fiscal</label>
+                            <textarea ng-model="vm.product.direccionFiscal" md-maxlength="300" rows="3" md-select-on-focus></textarea>
+                          </md-input-container>
+
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+
+            <md-tab>
+
+              <md-tab-label>
+                  <span >Acciones</span>
+              </md-tab-label>
+
+              <md-tab-body>
+                  <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                      <form>
+
+                            <md-input-container class="md-block">
+                                <label>Seleccione las Áreas Correspondientes</label>
+                                <md-select ng-model="vm.product.areasCorrespondientes" multiple>
+                                  <md-option value="Patronato/Consejo">Patronato/Consejo</md-option>
+                                  <md-option value="Directores">Directores</md-option>
+                                  <md-option value="Donante">Donante</md-option>
+                                  <md-option value="Alianza">Alianza</md-option>
+                                  <md-option value="Colaboradoy y/o Voluntario">Colaboradoy y/o Voluntario</md-option>
+                                  <md-option value="Equipo Operativo">Equipo Operativo</md-option>
+                                </md-select>
+                              </md-input-container>
+
+                              <md-input-container class="md-block">
+                                <label>Acción Realizada en Conjunto</label>
+                                <textarea ng-model="vm.product.accionEnConjunto" md-maxlength="300" rows="3" md-select-on-focus></textarea>
+                              </md-input-container>
+
+                              <md-input-container md-no-float class="md-block">
+                                <h4>Fecha de Acción</h4>
+                                  <md-datepicker ng-model="vm.product.fechaDeAccion" md-current-view="year" md-placeholder="Ingresar Fecha"></md-datepicker>
+                              </md-input-container>
+
+                              <md-input-container class="md-block">
+                                <label>Seleccione las Áreas Correspondientes</label>
+                                <md-select ng-model="vm.product.areasDeAccion" multiple>
+                                  <md-option value="Acceso a la salud">Acceso a la salud</md-option>
+                                  <md-option value="Educación para la vida">Educación para la vida</md-option>
+                                  <md-option value="Emprendimiento económico">Emprendimiento económico</md-option>
+                                  <md-option value="Sostenibilidad alimenticia">Sostenibilidad alimenticia</md-option>
+                                  <md-option value="Voluntariado">Voluntariado</md-option>
+                                  <md-option value="Fortalecimiento a organización de sociedad civil">Fortalecimiento a organización de sociedad civil</md-option>
+                                  <md-option value="Donante de Recurso">Donante de Recurso</md-option>
+                                  <md-option value="Donante en Especie">Donante en Especie</md-option>
+                                </md-select>
+                              </md-input-container>
+
+                              <md-input-container class="md-block">
+                                <label>Equipo Operativo</label>
+                                <textarea ng-model="vm.product.equipoOperativo" md-maxlength="300" rows="2" md-select-on-focus></textarea>
+                              </md-input-container>
+
+                      </form>
+                  </div>
+              </md-tab-body>
+
+
+            </md-tab>
+
+            <md-tab>
+
+              <md-tab-label>
+                  <span >Intereses y Valores</span>
+              </md-tab-label>
+
+              <md-tab-body>
+                  <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
+                      <form>
+
+                          <md-input-container class="md-block">
+                            <label>Lugares Frecuentados</label>
+                            <textarea ng-model="vm.product.lugaresFrecuentados" md-maxlength="300" rows="2" md-select-on-focus></textarea>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Intereses Extracurriculares</label>
+                            <md-select ng-model="vm.product.interesesExtracurriculares" >
+                              <md-option value="Actividades con niños">Actividades con niños</md-option>
+                              <md-option value="Actividades deportivas">Actividades deportivas</md-option>
+                              <md-option value="Actividades con adultos mayores">Actividades con adultos mayores</md-option>
+                              <md-option value="Servicios de salud">Servicios de salud</md-option>
+                              <md-option value="Siembra de hortalizas">Siembra de hortalizas</md-option>
+                              <md-option value="Asesorías a comunidades">Asesorías a comunidades</md-option>
+                              <md-option value="Colecta y donaciones">Colecta y donaciones</md-option>
+                              <md-option value="Otro">Otro</md-option>
+                            </md-select>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Habilidades</label>
+                            <md-select ng-model="vm.product.habilidades" >
+                              <md-option value="Emprendedor">Emprendedor</md-option>
+                              <md-option value="Liderazgo">Liderazgo</md-option>
+                              <md-option value="Consultor">Consultor</md-option>
+                              <md-option value="Arquitecto">Arquitecto</md-option>
+                              <md-option value="Tecnologías">Tecnologías</md-option>
+                              <md-option value="Salud">Salud</md-option>
+                              <md-option value="Deporte">Deporte</md-option>
+                              <md-option value="Comunicación">Comunicación</md-option>
+                              <md-option value="Lider de Opinión">Lider de Opinión</md-option>
+                              <md-option value="Otro">Otro</md-option>
+                            </md-select>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Valores</label>
+                            <md-select ng-model="vm.product.valores" >
+                              <md-option value="Respeto">Respeto</md-option>
+                              <md-option value="Tolerancia">Tolerancia</md-option>
+                              <md-option value="Honestidad">Honestidad</md-option>
+
+                            </md-select>
+                          </md-input-container>
+
+
+                      </form>
+                  </div>
+              </md-tab-body>
+
+
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

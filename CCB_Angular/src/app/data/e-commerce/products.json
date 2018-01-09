@@ -1,0 +1,63 @@
+{
+    "data": [
+
+        {
+            "id": 2,
+            "titulo":"Licenciado",
+            "nombre": "Juan",
+            "apellidoPaterno": "Perez",
+            "apellidoMaterno":"Hernandez",
+            "fechaNacimiento":"1/12/1967",
+            "genero":"Masculino",
+            "gradoDeEstudios":"Bachillerato",
+            "estadoCivil":"Soltero",
+            "nombreConyuge":"Maria Lopez",
+            "fechaNacimientoConyuge":"1/12/1990",
+
+            "nombreDeInstitucion":"CCB",
+            "puesto":"Gerente",
+            "tamanioDeInstitucion": "Pequeña",
+            "donatariaAutorizada":"Si",
+
+            "colonia":"Valle Dorado",
+            "calle":"123",
+            "ciudad":"Ciudad de México",
+            "municipio":"Álvaro Obregón",
+            "estado":"Ciudad de México",
+            "codigoPostal":"20123",
+
+            "nombreAsistente":"Juana María Pérez",
+            "telefonoAsistente":"4491110951",
+            "fechaNacimientoAsistente":"01/05/1980",
+
+            "email":"123@gmail.com",
+            "telefonoCasa":"4491580201",
+            "telefonoOficina":"",
+            "telefonoMovil":"4491960990",
+
+            "web":"www.ccb.com",
+            "facebook":"Juan Pérez",
+            "twitter":"@JuanPerez",
+
+            "caracteristicasContacto":"Siempre llamar a asistente personal",
+            "areaDeContacto":"Comunicación",
+
+            "rfc":"hipc670621af4",
+            "rfcNombre":"hipc",
+            "rfcNacimiento":"670621",
+            "rfcHomoclave":"af4",
+            "direccionFiscal":"Avenida las Américas",
+
+            "areasCorrespondientesS":"Directores,Donante,Alianza,Equipo Operativo",
+            "accionEnConjunto":"Alimento a niños de escasos recursos",
+            "fechaDeAccion":"1/12/2016",
+            "areasDeAccionS":"Educación para la vida",
+            "equipoOperativo":"test",
+
+            "lugaresFrecuentados":"Parque",
+            "interesesExtracurriculares":"Otro",
+            "habilidades":"Emprendedor",
+            "valores":"Respeto"
+        }
+    ]
+}

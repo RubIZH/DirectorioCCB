@@ -1,0 +1,720 @@
+<!-- SIDENAV CONTENT -->
+<div ms-scroll class="content">
+
+    <!-- NAVIGATION LIST -->
+    <md-list>
+
+  <md-subheader class="md-primary" class="md-no-sticky">
+    <div layout="row" layout-align="center center">
+        <div>
+          <md-button class="md-accent" ng-click="vm.filterProducts()"> Filtrar </md-button>
+      </div>
+    </div>
+
+  </md-subheader>
+
+  <md-divider></md-divider>
+
+  <md-subheader class="md-no-sticky"><span>Rango de Edad</span></md-subheader>
+
+      <md-list-item >
+        <md-slider-container>
+            <span>Mínimo</span>
+            <md-slider flex class="md-primary" md-discrete ng-model="vm.filterMinAge" step="1" min="1" max="99" aria-label="minimo">
+            </md-slider>
+        </md-slider-container>
+      </md-list-item>
+
+      <md-list-item >
+        <md-slider-container>
+            <span>Máximo</span>
+            <md-slider flex class="md-primary" md-discrete ng-model="vm.filterMaxAge" step="1" min="1" max="99" aria-label="maximo">
+            </md-slider>
+        </md-slider-container>
+      </md-list-item>
+
+    <md-divider></md-divider>
+
+    <md-subheader class="md-no-sticky"><span>Género</span></md-subheader>
+
+    <md-list-item >
+
+      <fieldset flex class="standard">
+
+
+        <div layout-wrap layout-gt-sm="row" >
+
+          <div flex-gt-sm="100">
+
+            </br>
+            <md-checkbox ng-model="vm.filterFemenino" aria-label="Checkbox 1">
+              Femenino
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterMasculino" aria-label="Checkbox 2">
+              Masculino
+            </md-checkbox>
+
+          </div>
+        </div>
+
+      </fieldset>
+
+    </md-list-item>
+
+    </br>
+
+    <md-divider></md-divider>
+
+    <md-subheader class="md-no-sticky"><span>Grado de Estudios</span></md-subheader>
+
+    <md-list-item>
+
+      <fieldset class="standard" flex>
+
+
+        <div layout-wrap layout-gt-sm="row" >
+
+          <div flex-gt-sm="100">
+
+            </br>
+            <md-checkbox ng-model="vm.filterPrimaria" aria-label="primaria">
+              Primaria
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterSecundaria" aria-label="secundaria">
+              Secundaria
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterBachillerato" aria-label="bachillerato">
+              Bachillerato
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterLicenciatura" aria-label="licenciatura">
+              Licenciatura
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterPosgrado" aria-label="posgrado">
+              Posgrado
+            </md-checkbox>
+
+          </div>
+        </div>
+
+
+      </fieldset>
+
+    </md-list-item>
+
+  </br>
+
+  <md-divider></md-divider>
+
+  <md-subheader class="md-no-sticky"><span>Estado Civil</span></md-subheader>
+
+  <md-list-item>
+
+    <fieldset class="standard" flex>
+
+
+      <div layout-wrap layout-gt-sm="row" >
+
+        <div flex-gt-sm="100">
+
+          </br>
+          <md-checkbox ng-model="vm.filterCasado" aria-label="casado">
+            Casado
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterSoltero" aria-label="soltero">
+            Soltero
+          </md-checkbox>
+
+        </div>
+      </div>
+
+    </fieldset>
+
+  </md-list-item>
+
+</br>
+
+<md-divider></md-divider>
+
+<md-subheader class="md-no-sticky"><span>Tamaño de Institución</span></md-subheader>
+
+<md-list-item>
+
+  <fieldset class="standard" flex>
+
+
+    <div layout-wrap layout-gt-sm="row" >
+
+      <div flex-gt-sm="100">
+
+        </br>
+        <md-checkbox ng-model="vm.filterMicro" aria-label="micro">
+          Micro
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterPequenia" aria-label="pequenia">
+          Pequeña
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterMediana" aria-label="mediana">
+          Mediana
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterGrande" aria-label="grande">
+          Grande
+        </md-checkbox>
+
+      </div>
+    </div>
+
+  </fieldset>
+
+</md-list-item>
+
+</br>
+
+<md-divider></md-divider>
+
+<md-subheader class="md-no-sticky"><span>Donataria Autorizada</span></md-subheader>
+
+    <md-list-item>
+
+      <fieldset class="standard" flex>
+
+
+        <div layout-wrap layout-gt-sm="row" >
+
+          <div flex-gt-sm="100">
+
+            </br>
+            <md-checkbox ng-model="vm.filterDonatariaAutorizadaSi" aria-label="donatariaAutorizadaSi">
+              Si
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterDonatariaAutorizadaNo" aria-label="donatariaAutorizadaNo">
+              No
+            </md-checkbox>
+
+          </div>
+        </div>
+
+      </fieldset>
+
+    </md-list-item>
+    </br>
+
+  <md-divider></md-divider>
+
+  <md-subheader class="md-no-sticky"><span>Estado</span></md-subheader>
+
+    <md-list-item>
+      <md-chips ng-model="vm.selectedStates" md-autocomplete-snap
+                    md-transform-chip="vm.transformChip($chip)"
+                    md-require-match="vm.autocompleteRequireMatch">
+            <md-autocomplete
+                md-selected-item="vm.selectedItem"
+                md-search-text="vm.searchText"
+                md-items="item in vm.querySearch(vm.searchText)"
+                md-item-text="item.name"
+                placeholder="Buscar Estado">
+              <span md-highlight-text="vm.searchText">{{item.name}}</span>
+            </md-autocomplete>
+            <md-chip-template>
+              <span>
+                <strong>{{$chip.name}}</strong>
+              </span>
+            </md-chip-template>
+          </md-chips>
+    </md-list-item>
+
+    </br>
+    </br>
+
+    <md-divider></md-divider>
+
+    <md-subheader class="md-no-sticky"><span>Áreas de Contacto</span></md-subheader>
+
+    <md-list-item>
+      <fieldset class="standard" flex>
+
+
+        <div layout-wrap layout-gt-sm="row" >
+
+          <div flex-gt-sm="100">
+
+            </br>
+            <md-checkbox ng-model="vm.filterComunicacion" aria-label="comunicacion">
+              Comunicación
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterAdministracion" aria-label="adminstracion">
+              Admnistración
+            </md-checkbox>
+
+          </div>
+        </div>
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterDireccion " aria-label="direccion">
+              Dirección
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterAsistenciaEmergencia" aria-label="asistenciaEmergencia">
+              Asistencia y Emergencias
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterPromocionHumana" aria-label="promocionHumana">
+              Promoción Humana
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterDesarrolloSocial" aria-label="desarrolloSocial">
+              Desarrollo Social
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterConsejoConsultivo" aria-label="consejoConsultivo">
+              Consejo Consultivo
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterPatronato" aria-label="patronato">
+              Patronato
+            </md-checkbox>
+
+          </div>
+        </div>
+
+      </fieldset>
+
+    </md-list-item>
+    </br>
+
+    <md-divider></md-divider>
+
+    <md-subheader class="md-no-sticky"><span>Tipo de Entidad</span></md-subheader>
+
+    <md-list-item>
+      <fieldset class="standard" flex>
+
+
+        <div layout-wrap layout-gt-sm="row" >
+
+          <div flex-gt-sm="100">
+
+            </br>
+            <md-checkbox ng-model="vm.filterPatronatoConsejo " aria-label="patronatoConsejo">
+              Patronato/Consejo
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterDirectores" aria-label="directores">
+              Directores
+            </md-checkbox>
+
+          </div>
+        </div>
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterDonante" aria-label="donante">
+              Donante
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterAlianza" aria-label="alianza">
+              Alianza
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterCoolaboradorVoluntario" aria-label="coolaboradorVoluntario">
+              Coolaborador y/o Voluntario
+            </md-checkbox>
+
+          </div>
+        </div>
+
+        <div layout-wrap layout-gt-sm="row" >
+          <div flex-gt-sm="100">
+
+            <md-checkbox ng-model="vm.filterEquipoOperativo" aria-label="equipoOperativo">
+              Equipo Operativo
+            </md-checkbox>
+
+          </div>
+        </div>
+
+      </fieldset>
+
+    </md-list-item>
+
+
+  </br>
+
+  <md-divider></md-divider>
+
+  <md-subheader class="md-no-sticky"><span>Áreas de Acción</span></md-subheader>
+
+  <md-list-item>
+    <fieldset class="standard" flex>
+
+
+      <div layout-wrap layout-gt-sm="row" >
+
+        <div flex-gt-sm="100">
+
+          </br>
+          <md-checkbox ng-model="vm.filterAccesoSalud" aria-label="AccesoSalud">
+            Acceso a la salud
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterEducacionVida" aria-label="EducacionVida">
+            Educación para la vida
+          </md-checkbox>
+
+        </div>
+      </div>
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterEmprendimientoEconomico" aria-label="EmprendimientoEconomico">
+            Emprendimiento económico
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="filterSostenibilidadAlimenticia" aria-label="SostenibilidadAlimenticia">
+            Sostenibilidad alimenticia
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterVoluntariado" aria-label="Voluntariado">
+            Voluntariado
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterFortalecimientoOrganizacion" aria-label="Fortalecimiento">
+            Fortalecimiento a organización de sociedad civil
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterDonanteDeRecurso" aria-label="DonanteDeRecurso">
+            Donante de Recurso
+          </md-checkbox>
+
+        </div>
+      </div>
+
+      <div layout-wrap layout-gt-sm="row" >
+        <div flex-gt-sm="100">
+
+          <md-checkbox ng-model="vm.filterDonanteEnEspecie" aria-label="DonanteEnEspecie">
+            Donante en Especie
+          </md-checkbox>
+
+        </div>
+      </div>
+
+    </fieldset>
+
+  </md-list-item>
+
+</br>
+
+<md-divider></md-divider>
+
+<md-subheader class="md-no-sticky"><span>Intereses Extracurriculares</span></md-subheader>
+
+<md-list-item>
+  <fieldset class="standard" flex>
+
+
+    <div layout-wrap layout-gt-sm="row" >
+
+      <div flex-gt-sm="100">
+
+        </br>
+        <md-checkbox ng-model="vm.filterActividadesNinos" aria-label="actividadesNiños">
+          Actividades con niños
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterActividadesDeportivas" aria-label="actividadesDeportivas">
+          Actividades deportivas
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterActividadesAdultosMayores" aria-label="actividadesAdultosMayores">
+          Actividades con adultos mayores
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterServiciosDeSalud" aria-label="serviciosDeSalud">
+          Servicios de salud
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.SiembraDeHortalizas" aria-label="siembraDeHortalizas">
+          Siembra de hortalizas
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.AsesoriasComunidades" aria-label="asesoriasAComunidades">
+          Asesorías a comunidades
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.ColectaYDonaciones" aria-label="colectaYDonaciones">
+          Colecta y donaciones
+        </md-checkbox>
+
+      </div>
+    </div>
+
+    <div layout-wrap layout-gt-sm="row" >
+      <div flex-gt-sm="100">
+
+        <md-checkbox ng-model="vm.filterOtro" aria-label="otro">
+          Otro
+        </md-checkbox>
+
+      </div>
+    </div>
+
+
+
+  </fieldset>
+
+</md-list-item>
+
+</br>
+
+<md-divider></md-divider>
+
+<md-subheader class="md-no-sticky"><span>Valores</span></md-subheader>
+
+<md-list-item>
+  <fieldset class="standard" flex>
+
+
+    <div layout-wrap layout-gt-sm="row" >
+
+      <div flex-gt-sm="100">
+
+        </br>
+        <md-checkbox ng-model="vm.filterRespeto" aria-label="respeto">
+          Respeto
+        </md-checkbox>
+
+      </div>
+    </div>
+    <div layout-wrap layout-gt-sm="row" >
+
+      <div flex-gt-sm="100">
+
+        </br>
+        <md-checkbox ng-model="vm.filterTolerancia" aria-label="tolerancia">
+          Tolerancia
+        </md-checkbox>
+
+      </div>
+    </div>
+    <div layout-wrap layout-gt-sm="row" >
+
+      <div flex-gt-sm="100">
+
+        </br>
+        <md-checkbox ng-model="vm.filterHonestidad" aria-label="honestidad">
+          Honestidad
+        </md-checkbox>
+
+      </div>
+    </div>
+
+
+
+
+  </fieldset>
+
+</md-list-item>
+
+
+
+
+
+
+
+    </md-list>
+    <!-- / NAVIGATION LIST -->
+
+</div>
+<!-- / SIDENAV CONTENT -->

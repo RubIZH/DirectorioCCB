@@ -1,0 +1,159 @@
+<div id="e-commerce-products" class="page-layout carded fullwidth" layout="row">
+
+
+  <!-- MAIN SIDENAV -->
+  <md-sidenav class="sidenav main-sidenav md-white-bg" ms-scroll
+              md-component-id="main-sidenav"
+              ms-sidenav-helper ng-include="'app/main/apps/e-commerce/sidenavs/main/main-sidenav.html'">
+  </md-sidenav>
+  <!-- / MAIN SIDENAV -->
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="row" layout-align="space-between center">
+            <div class="white-fg" layout="column" layout-align="start start">
+
+
+                <div class="h1" layout="row" layout-align="start center">
+                  <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
+                             aria-label="Toggle sidenav" >
+                      <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+
+                  </md-button>
+                    <span>Directorio</span>
+                </div>
+                <div class="product-count secondary-text">
+                    <span >Total de Registros:</span>
+                    <span>{{vm.filteredProducts.length}}</span>
+                </div>
+            </div>
+
+            <div class="search" layout="row" layout-align="start center" flex>
+                <md-icon md-font-icon="icon-magnify" class="white-text icon search-icon"></md-icon>
+                <input id="e-commerce-products-search" class="search-input" type="text" placeholder="Buscar"
+                       flex>
+            </div>
+
+            <div>
+                <md-button class="md-raised md-background">
+                  <span>
+                    <div excel-export export-data="vm.exportData" file-name="{{vm.fileName}}"></div>
+                    <md-icon md-font-icon="icon-download" ></md-icon>
+                  </span>
+
+                </md-button>
+
+
+
+                <md-button class="md-raised md-background" ng-click="vm.gotoAddProduct()">
+                  <span>
+
+                    <md-icon md-font-icon="icon-plus" ></md-icon>
+                  </span>
+                </md-button>
+            </div>
+
+
+
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- CONTENT TOOLBAR -->
+
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content fullpage-datatable" layout="column" flex>
+
+                <table class="dataTable row-border hover" datatable="ng" dt-instance="vm.dtInstance"
+                       dt-options="vm.dtOptions">
+                    <thead>
+                        <tr>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Título</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Nombre</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Teléfono Móvil</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Teléfono de Oficina</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Correo Electrónico</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Institución</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Puesto</span>
+                                </div>
+                            </th>
+
+
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Acciones</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in ::vm.filteredProducts">
+                            <td>{{product.titulo}}</td>
+                            <td>{{product.nombre}} {{product.apellidoPaterno}} {{product.apellidoMaterno}}</td>
+                            <td>{{product.telefonoMovil}}</td>
+                            <td>{{product.telefonoOficina}}</td>
+                            <td>{{product.email}}</td>
+                            <td>{{product.nombreDeInstitucion}}</td>
+                            <td>{{product.puesto}}</td>
+                            <td>
+                                <md-button class="edit-button md-icon-button" ng-click="vm.gotoProductDetail(product.id)" aria-label="Product details"
+                                           translate translate-attr-aria-label="EC.PRODUCT_DETAILS">
+                                    <md-icon md-font-icon="icon-pencil" class="s16"></md-icon>
+                                </md-button>
+                                <md-button class="edit-button md-icon-button" ng-click="vm.showConfirm($event, product.id)" aria-label="Product details"
+                                           translate translate-attr-aria-label="EC.PRODUCT_DETAILS">
+                                    <md-icon md-font-icon="icon-delete" class="s16"></md-icon>
+                                </md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

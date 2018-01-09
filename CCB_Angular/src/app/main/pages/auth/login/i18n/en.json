@@ -1,0 +1,14 @@
+{
+    "LOGIN": {
+        "TITLE": "Ingresar",
+        "EMAIL": "Email",
+        "PASSWORD": "Contraseña",
+        "REMEMBER_ME": "Recordar",
+        "LOG_IN": "INGRESAR",
+        "ERRORS": {
+            "EMAIL_REQUIRED": "Email es requerido",
+            "EMAIL_MUST_VALID": "Email debe ser válido",
+            "PASSWORD_REQUIRED": "Contraseña es requerida"
+        }
+    }
+}
